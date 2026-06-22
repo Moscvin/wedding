@@ -84,8 +84,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 20%;
       filter: grayscale(100%) brightness(0.55);
+    }
+
+    @media (min-width: 1024px) {
+      .hero__bg img {
+        object-position: center 30%;
+      }
     }
 
     .hero__content {
@@ -257,7 +263,7 @@
 
     .gallery__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.2rem;
       max-width: 1000px;
       margin: 0 auto;
@@ -512,25 +518,25 @@
     }
 
     .info-block svg {
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
       stroke: var(--sage);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .info-block__title {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 1.3rem;
+      font-weight: 600;
+      font-size: 1.6rem;
       color: var(--deep-green);
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
     }
 
     .info-block p {
-      font-size: 0.92rem;
-      max-width: 300px;
+      font-size: 1.05rem;
+      max-width: 320px;
       margin: 0 auto;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     /* ── Footer ── */
@@ -712,7 +718,7 @@
     /* ── Responsive ── */
     @media (max-width: 600px) {
       section { padding: 4rem 1.2rem; }
-      .gallery__grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+      .gallery__grid { grid-template-columns: 1fr; gap: 0.8rem; }
       .details__grid { grid-template-columns: 1fr; gap: 2rem; }
       .info-blocks__grid { grid-template-columns: 1fr; }
     }
@@ -794,9 +800,6 @@
       <h2 class="section-title reveal">Povestea noastră în imagini</h2>
       <div class="section-divider reveal"></div>
       <div class="gallery__grid">
-        <div class="gallery__item reveal"><img src="img/photo-1.jpg" alt="Vlad & Iana"></div>
-        <div class="gallery__item reveal"><img src="img/photo-2.jpg" alt="Vlad & Iana"></div>
-        <div class="gallery__item reveal"><img src="img/photo-3.jpg" alt="Vlad & Iana"></div>
         <div class="gallery__item reveal"><img src="img/photo-4.jpg" alt="Vlad & Iana"></div>
         <div class="gallery__item reveal"><img src="img/photo-5.jpg" alt="Vlad & Iana"></div>
         <div class="gallery__item reveal"><img src="img/photo-6.jpg" alt="Vlad & Iana"></div>
@@ -813,7 +816,7 @@
         <div class="details__item">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           <div class="details__label">Data</div>
-          <div class="details__value">27 august 2027 (Vineri)</div>
+          <div class="details__value">27.08.2027 (Vineri)</div>
         </div>
         <div class="details__item">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
