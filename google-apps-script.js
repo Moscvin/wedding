@@ -18,7 +18,7 @@ function doPost(e) {
     data.allergies || "",
     data.drinks || "",
     data.note || "",
-    data.timestamp || new Date().toISOString(),
+    data.timestamp || new Date().toLocaleString('ro-RO', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
   ]);
 
   return ContentService.createTextOutput(
