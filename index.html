@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vlad & Iana — 27 august 2027</title>
+  <meta name="description" content="Vă invităm la nunta noastră — 27 august 2027, La Iepurași.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream: #F7F3EA;
+      --sage: #8E9C7C;
+      --deep-green: #5C6A4D;
+      --taupe: #CCC1AD;
+      --blush: #E7D6CE;
+      --ink: #3C3A33;
+      --white: #FDFCF9;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .calligraphy {
+      font-family: 'Pinyon Script', cursive;
+      font-weight: 400;
+    }
+
+    .serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) brightness(0.55);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      color: var(--white);
+      padding: 2rem 1.5rem;
+    }
+
+    .hero__names {
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero__ampersand {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 0.6em;
+      display: block;
+      margin: -0.1em 0;
+      opacity: 0.8;
+    }
+
+    .hero__tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .hero__details {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+
+    .hero__details span { margin: 0 0.5em; }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--white);
+      opacity: 0.6;
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+
+    .hero__scroll span {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero__scroll svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── Section layout ── */
+    section {
+      padding: 6rem 1.5rem;
+    }
+
+    .section-narrow {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      text-align: center;
+      color: var(--deep-green);
+      margin-bottom: 2rem;
+      line-height: 1.3;
+    }
+
+    .section-divider {
+      width: 50px;
+      height: 1px;
+      background: var(--taupe);
+      margin: 0 auto 2rem;
+    }
+
+    /* ── Welcome ── */
+    .welcome {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .welcome p {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      color: var(--ink);
+    }
+
+    .welcome__signature {
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
+      color: var(--sage);
+    }
+
+    /* ── Narrative cards ── */
+    .narrative {
+      text-align: center;
+    }
+
+    .narrative__card {
+      max-width: 500px;
+      margin: 2.5rem auto 0;
+    }
+
+    .narrative__photo {
+      border: 1px solid var(--taupe);
+      padding: 8px;
+      background: var(--white);
+    }
+
+    .narrative__photo img {
+      width: 100%;
+      filter: grayscale(100%);
+    }
+
+    .narrative__caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: var(--sage);
+      margin-top: 1rem;
+    }
+
+    .narrative__text {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      max-width: 540px;
+      margin: 2rem auto 0;
+    }
+
+    /* ── Gallery ── */
+    .gallery {
+      background: var(--white);
+    }
+
+    .gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery__item {
+      overflow: hidden;
+      border: 1px solid var(--taupe);
+      padding: 6px;
+      background: var(--cream);
+    }
+
+    .gallery__item img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: transform 0.6s ease;
+    }
+
+    .gallery__item:hover img {
+      transform: scale(1.03);
+    }
+
+    /* ── Details ── */
+    .details__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .details__item svg {
+      width: 40px;
+      height: 40px;
+      stroke: var(--sage);
+      margin-bottom: 1rem;
+    }
+
+    .details__label {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: var(--deep-green);
+      margin-bottom: 0.3rem;
+    }
+
+    .details__value {
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    /* ── Countdown ── */
+    .countdown-section {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 4vw, 2.5rem);
+      margin-top: 2rem;
+    }
+
+    .countdown__block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .countdown__number {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      color: var(--deep-green);
+      line-height: 1;
+    }
+
+    .countdown__label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-top: 0.4rem;
+    }
+
+    /* ── Dress code ── */
+    .dresscode {
+      text-align: center;
+    }
+
+    .dresscode p {
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+    }
+
+    .dresscode__swatches {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .dresscode__swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dresscode__circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid var(--taupe);
+    }
+
+    .dresscode__name {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    /* ── RSVP ── */
+    .rsvp {
+      background: var(--white);
+    }
+
+    .rsvp__form {
+      max-width: 560px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .field label {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--deep-green);
+      font-weight: 400;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--taupe);
+      border-radius: 4px;
+      background: var(--cream);
+      color: var(--ink);
+      transition: border-color 0.3s;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--sage);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      text-transform: none;
+      letter-spacing: 0;
+      cursor: pointer;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--sage);
+    }
+
+    .btn {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 1rem 3rem;
+      border: 1px solid var(--deep-green);
+      background: var(--deep-green);
+      color: var(--white);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      align-self: center;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--deep-green);
+    }
+
+    .rsvp__success {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .rsvp__success.show {
+      display: block;
+    }
+
+    .rsvp__success .calligraphy {
+      font-size: 2rem;
+      color: var(--sage);
+      margin-bottom: 1rem;
+    }
+
+    /* ── Info blocks ── */
+    .info-blocks {
+      text-align: center;
+    }
+
+    .info-blocks__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .info-block svg {
+      width: 36px;
+      height: 36px;
+      stroke: var(--sage);
+      margin-bottom: 1rem;
+    }
+
+    .info-block__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: var(--deep-green);
+      margin-bottom: 0.8rem;
+    }
+
+    .info-block p {
+      font-size: 0.92rem;
+      max-width: 300px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 5rem 1.5rem 3rem;
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .footer__names {
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      margin-bottom: 1rem;
+      color: var(--taupe);
+    }
+
+    .footer__tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.2rem;
+      opacity: 0.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer__admin {
+      font-size: 0.75rem;
+      opacity: 0.35;
+      margin-top: 3rem;
+    }
+
+    .footer__admin a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Admin panel ── */
+    .admin-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(60, 58, 51, 0.6);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .admin-overlay.open {
+      display: flex;
+    }
+
+    .admin-panel {
+      background: var(--white);
+      border-radius: 8px;
+      width: 94vw;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+
+    .admin-panel__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .admin-login {
+      text-align: center;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .admin-login h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--deep-green);
+    }
+
+    .admin-dashboard { display: none; }
+    .admin-dashboard.show { display: block; }
+    .admin-login.hide { display: none; }
+
+    .admin-stats {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .admin-stat {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      padding: 1.2rem;
+      background: var(--cream);
+      border-radius: 6px;
+    }
+
+    .admin-stat__number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--deep-green);
+      line-height: 1;
+    }
+
+    .admin-stat__label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--taupe);
+      margin-top: 0.3rem;
+    }
+
+    .admin-table-wrap {
+      overflow-x: auto;
+      margin-top: 1.5rem;
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .admin-table th {
+      text-align: left;
+      padding: 0.6rem 0.8rem;
+      border-bottom: 2px solid var(--taupe);
+      font-weight: 500;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--deep-green);
+      white-space: nowrap;
+    }
+
+    .admin-table td {
+      padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+
+    .admin-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-sm {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--sage);
+      background: transparent;
+      color: var(--deep-green);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-sm:hover {
+      background: var(--sage);
+      color: var(--white);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.2rem; }
+      .gallery__grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+      .details__grid { grid-template-columns: 1fr; gap: 2rem; }
+      .info-blocks__grid { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 1024px) {
+      section { padding: 8rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="img/photo-1.jpg" alt="Vlad & Iana">
+    </div>
+    <div class="hero__content">
+      <h1 class="hero__names calligraphy">
+        Vlad
+        <span class="hero__ampersand">&amp;</span>
+        Iana
+      </h1>
+      <p class="hero__tagline">Vă așteptăm cu nerăbdare</p>
+      <p class="hero__details">
+        Vineri <span>&middot;</span> 27 august 2027 <span>&middot;</span> La Iepurași
+      </p>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- WELCOME -->
+  <section class="welcome">
+    <div class="section-narrow reveal">
+      <div class="section-divider"></div>
+      <p>
+        Suntem tineri, îndrăgostiți de călătorii și de fiecare clipă trăită din plin. Pe acest drum am ales să vă avem aproape — pe voi, oamenii care contează cu adevărat pentru noi. Ne-am bucura din suflet să sărbătorim împreună începutul celei mai frumoase aventuri.
+      </p>
+      <p class="welcome__signature calligraphy">Ai voștri, Vlad &amp; Iana</p>
+    </div>
+  </section>
+
+  <!-- NARRATIVE 1 -->
+  <section class="narrative">
+    <div class="section-narrow reveal">
+      <h2 class="section-title">Drumurile noastre<br>s-au întâlnit</h2>
+      <p class="narrative__text">
+        Două vieți care iubeau să descopere lumea au înțeles că cea mai frumoasă destinație erau una pentru cealaltă.
+      </p>
+      <div class="narrative__card">
+        <div class="narrative__photo">
+          <img src="img/photo-2.jpg" alt="Vlad & Iana — drumurile noastre">
+        </div>
+        <p class="narrative__caption">Dragoste cu un &laquo;DA&raquo;</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NARRATIVE 2 -->
+  <section class="narrative" style="background: var(--white);">
+    <div class="section-narrow reveal">
+      <h2 class="section-title">Nu e despre destinație,<br>e despre călătoria împreună</h2>
+      <div class="narrative__card">
+        <div class="narrative__photo">
+          <img src="img/photo-3.jpg" alt="Vlad & Iana — călătoria împreună">
+        </div>
+      </div>
+      <p class="narrative__text" style="margin-top: 2rem;">
+        Nu ne dorim o petrecere după tipic, ci o zi adevărată, alături de oamenii dragi. Pentru noi contează fiecare clipă trăită împreună — și exact asta vrem să împărțim cu voi.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="section-wide">
+      <h2 class="section-title reveal">Povestea noastră în imagini</h2>
+      <div class="section-divider reveal"></div>
+      <div class="gallery__grid">
+        <div class="gallery__item reveal"><img src="img/photo-1.jpg" alt="Vlad & Iana"></div>
+        <div class="gallery__item reveal"><img src="img/photo-2.jpg" alt="Vlad & Iana"></div>
+        <div class="gallery__item reveal"><img src="img/photo-3.jpg" alt="Vlad & Iana"></div>
+        <div class="gallery__item reveal"><img src="img/photo-4.jpg" alt="Vlad & Iana"></div>
+        <div class="gallery__item reveal"><img src="img/photo-5.jpg" alt="Vlad & Iana"></div>
+        <div class="gallery__item reveal"><img src="img/photo-6.jpg" alt="Vlad & Iana"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="details-section">
+    <div class="section-narrow">
+      <h2 class="section-title reveal">Detaliile care contează</h2>
+      <div class="section-divider reveal"></div>
+      <div class="details__grid reveal">
+        <div class="details__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <div class="details__label">Data</div>
+          <div class="details__value">27 august 2027 (Vineri)</div>
+        </div>
+        <div class="details__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="details__label">Ora</div>
+          <div class="details__value">— va fi anunțată —</div>
+        </div>
+        <div class="details__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="details__label">Locația</div>
+          <div class="details__value">La Iepurași<br><small>Zona de odihnă și agrement</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown-section">
+    <div class="section-narrow reveal">
+      <h2 class="section-title">Până la nuntă mai sunt</h2>
+      <div class="countdown" id="countdown">
+        <div class="countdown__block">
+          <div class="countdown__number" id="cd-days">---</div>
+          <div class="countdown__label">Zile</div>
+        </div>
+        <div class="countdown__block">
+          <div class="countdown__number" id="cd-hours">--</div>
+          <div class="countdown__label">Ore</div>
+        </div>
+        <div class="countdown__block">
+          <div class="countdown__number" id="cd-minutes">--</div>
+          <div class="countdown__label">Minute</div>
+        </div>
+        <div class="countdown__block">
+          <div class="countdown__number" id="cd-seconds">--</div>
+          <div class="countdown__label">Secunde</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRESS CODE -->
+  <section class="dresscode">
+    <div class="section-narrow reveal">
+      <h2 class="section-title">Dress-code<br><span class="calligraphy" style="font-size:0.8em; color: var(--sage);">Pastel Elegant</span></h2>
+      <p>
+        V-am pregătit o paletă blândă, în tonuri pastelate. Alegeți o nuanță care vă place și completați povestea zilei noastre.
+      </p>
+      <div class="dresscode__swatches">
+        <div class="dresscode__swatch">
+          <div class="dresscode__circle" style="background: #8E9C7C;"></div>
+          <span class="dresscode__name">Sage</span>
+        </div>
+        <div class="dresscode__swatch">
+          <div class="dresscode__circle" style="background: #F7F3EA;"></div>
+          <span class="dresscode__name">Crem</span>
+        </div>
+        <div class="dresscode__swatch">
+          <div class="dresscode__circle" style="background: #CCC1AD;"></div>
+          <span class="dresscode__name">Taupe</span>
+        </div>
+        <div class="dresscode__swatch">
+          <div class="dresscode__circle" style="background: #E7D6CE;"></div>
+          <span class="dresscode__name">Blush</span>
+        </div>
+        <div class="dresscode__swatch">
+          <div class="dresscode__circle" style="background: #B5C4A8;"></div>
+          <span class="dresscode__name">Verde pal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp" id="rsvp">
+    <div class="section-narrow">
+      <h2 class="section-title reveal">Confirmă prezența</h2>
+      <div class="section-divider reveal"></div>
+
+      <form class="rsvp__form reveal" id="rsvpForm">
+        <div class="field">
+          <label for="name">Numele și prenumele *</label>
+          <input type="text" id="name" name="name" required placeholder="ex. Popescu Maria">
+        </div>
+
+        <div class="field">
+          <label for="attendance">Plănuiți să fiți prezent(ă)? *</label>
+          <select id="attendance" name="attendance" required>
+            <option value="" disabled selected>— Alegeți —</option>
+            <option value="da">Da, cu plăcere!</option>
+            <option value="nu">Din păcate, nu voi putea ajunge</option>
+            <option value="incert">Încă nu sunt sigur(ă)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="phone">Telefon</label>
+          <input type="tel" id="phone" name="phone" placeholder="+373 / +40 ...">
+        </div>
+
+        <div class="field">
+          <label for="partner">Voi fi cu perechea (nume, prenume)</label>
+          <input type="text" id="partner" name="partner" placeholder="Opțional">
+        </div>
+
+        <div class="field">
+          <label for="children">Numele copiilor (dacă vin)</label>
+          <input type="text" id="children" name="children" placeholder="Opțional">
+        </div>
+
+        <div class="field">
+          <label for="allergies">Aveți alergii? Indicați la ce</label>
+          <input type="text" id="allergies" name="allergies" placeholder="Opțional">
+        </div>
+
+        <div class="field">
+          <label>Voi bea</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="drinks" value="vodcă"> Vodcă</label>
+            <label><input type="checkbox" name="drinks" value="coniac"> Coniac</label>
+            <label><input type="checkbox" name="drinks" value="vin alb"> Vin alb</label>
+            <label><input type="checkbox" name="drinks" value="vin roșu"> Vin roșu</label>
+            <label><input type="checkbox" name="drinks" value="cocktailuri"> Cocktailuri personalizate</label>
+            <label><input type="checkbox" name="drinks" value="fără alcool"> Nu voi consuma alcool</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="note">Notă specială</label>
+          <textarea id="note" name="note" placeholder="Orice ne-ați dori să știm…"></textarea>
+        </div>
+
+        <button type="submit" class="btn">Trimite</button>
+      </form>
+
+      <div class="rsvp__success" id="rsvpSuccess">
+        <p class="calligraphy">Mulțumim!</p>
+        <p>Răspunsul tău a fost înregistrat.<br>Ne vedem pe 27 august 2027!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO BLOCKS -->
+  <section class="info-blocks">
+    <div class="section-wide">
+      <div class="info-blocks__grid">
+        <div class="info-block reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          <h3 class="info-block__title">Micii invitați</h3>
+          <p>Dragi invitați, vă vom fi recunoscători dacă veți dedica zilei noastre toată atenția și energia, ca să vă puteți relaxa și bucura din plin. De aceea, vom fi recunoscători dacă sărbătoarea va decurge în cerc de adulți.</p>
+        </div>
+        <div class="info-block reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          <h3 class="info-block__title">Flori</h3>
+          <p>Sărbătoarea noastră va fi înconjurată de flori din abundență, de aceea un compliment plăcut în locul buchetului ar fi o sticlă din vinul vostru preferat, pe care o vom deschide la următoarea sărbătoare împreună.</p>
+        </div>
+        <div class="info-block reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <h3 class="info-block__title">Ce să dăruiți?</h3>
+          <p>În calitate de cadou, ne-am bucura de o contribuție la bugetul familiei noastre. Cu siguranță ne va ajuta să ne transformăm visul în realitate!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer__names calligraphy">Vlad &amp; Iana</p>
+    <p class="footer__tagline">Hai la nuntă!</p>
+    <p class="footer__tagline" style="font-size: 0.9rem;">Cu drag, Vlad &amp; Iana</p>
+    <p class="footer__admin"><a href="#" id="adminBtn">Panoul mirilor</a></p>
+  </footer>
+
+  <!-- ADMIN OVERLAY -->
+  <div class="admin-overlay" id="adminOverlay">
+    <div class="admin-panel">
+      <button class="admin-panel__close" id="adminClose">&times;</button>
+
+      <div class="admin-login" id="adminLogin">
+        <h3>Panoul mirilor</h3>
+        <div class="field">
+          <label for="adminPass">Cheie de acces</label>
+          <input type="password" id="adminPass" placeholder="&middot;&middot;&middot;">
+        </div>
+        <br>
+        <button class="btn" id="adminLoginBtn">Intră</button>
+        <p id="adminError" style="color:#c75; margin-top:1rem; font-size:0.85rem; display:none;">Cheie incorectă.</p>
+      </div>
+
+      <div class="admin-dashboard" id="adminDashboard">
+        <h3 style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.5rem; color:var(--deep-green); margin-bottom:1.5rem;">Invitați</h3>
+        <div class="admin-stats" id="adminStats"></div>
+        <div class="admin-actions">
+          <button class="btn-sm" id="adminRefresh">Actualizează</button>
+          <button class="btn-sm" id="adminExport">Export CSV</button>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead id="adminThead"></thead>
+            <tbody id="adminTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ── Scroll reveal ── */
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+
+    /* ── Countdown ── */
+    const wedding = new Date('2027-08-27T00:00:00');
+    function updateCountdown() {
+      const now = new Date();
+      let diff = wedding - now;
+      if (diff < 0) diff = 0;
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-days').textContent = d;
+      document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+      document.getElementById('cd-minutes').textContent = String(m).padStart(2, '0');
+      document.getElementById('cd-seconds').textContent = String(s).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* ── RSVP ── */
+    const SCRIPT_URL = ''; // TODO: paste Google Apps Script URL
+
+    document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form.name.value,
+        attendance: form.attendance.value,
+        phone: form.phone.value,
+        partner: form.partner.value,
+        children: form.children.value,
+        allergies: form.allergies.value,
+        drinks: [...form.querySelectorAll('input[name="drinks"]:checked')].map(c => c.value).join(', '),
+        note: form.note.value,
+        timestamp: new Date().toISOString()
+      };
+
+      if (SCRIPT_URL) {
+        try {
+          await fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+        } catch (err) {
+          console.error('RSVP submit error:', err);
+        }
+      } else {
+        console.log('RSVP data (no endpoint configured):', data);
+      }
+
+      form.style.display = 'none';
+      document.getElementById('rsvpSuccess').classList.add('show');
+    });
+
+    /* ── Admin panel ── */
+    const overlay = document.getElementById('adminOverlay');
+    document.getElementById('adminBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      overlay.classList.add('open');
+    });
+    document.getElementById('adminClose').addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) overlay.classList.remove('open');
+    });
+
+    document.getElementById('adminLoginBtn').addEventListener('click', async () => {
+      const pass = document.getElementById('adminPass').value;
+      if (!SCRIPT_URL) {
+        document.getElementById('adminError').textContent = 'Endpoint-ul nu este configurat încă.';
+        document.getElementById('adminError').style.display = 'block';
+        return;
+      }
+      try {
+        const res = await fetch(SCRIPT_URL + '?action=login&key=' + encodeURIComponent(pass));
+        const json = await res.json();
+        if (json.success) {
+          window.__adminKey = pass;
+          document.getElementById('adminLogin').classList.add('hide');
+          document.getElementById('adminDashboard').classList.add('show');
+          loadGuests();
+        } else {
+          document.getElementById('adminError').style.display = 'block';
+        }
+      } catch {
+        document.getElementById('adminError').textContent = 'Eroare de conexiune.';
+        document.getElementById('adminError').style.display = 'block';
+      }
+    });
+
+    async function loadGuests() {
+      if (!SCRIPT_URL) return;
+      const res = await fetch(SCRIPT_URL + '?action=list&key=' + encodeURIComponent(window.__adminKey));
+      const json = await res.json();
+      if (!json.success) return;
+      const rows = json.data;
+      if (!rows.length) return;
+
+      const total = rows.length;
+      const confirmed = rows.filter(r => r.attendance === 'da').length;
+      const declined = rows.filter(r => r.attendance === 'nu').length;
+      const unsure = rows.filter(r => r.attendance === 'incert').length;
+      const people = rows.reduce((sum, r) => sum + 1 + (r.partner ? 1 : 0), 0);
+
+      document.getElementById('adminStats').innerHTML =
+        '<div class="admin-stat"><div class="admin-stat__number">' + total + '</div><div class="admin-stat__label">Răspunsuri</div></div>' +
+        '<div class="admin-stat"><div class="admin-stat__number">' + confirmed + '</div><div class="admin-stat__label">Confirmați</div></div>' +
+        '<div class="admin-stat"><div class="admin-stat__number">' + declined + '</div><div class="admin-stat__label">Nu vin</div></div>' +
+        '<div class="admin-stat"><div class="admin-stat__number">' + unsure + '</div><div class="admin-stat__label">Incerți</div></div>' +
+        '<div class="admin-stat"><div class="admin-stat__number">~' + people + '</div><div class="admin-stat__label">Persoane est.</div></div>';
+
+      const cols = Object.keys(rows[0]);
+      document.getElementById('adminThead').innerHTML = '<tr>' + cols.map(c => '<th>' + c + '</th>').join('') + '<th></th></tr>';
+      document.getElementById('adminTbody').innerHTML = rows.map((r, i) =>
+        '<tr>' + cols.map(c => '<td>' + (r[c] || '') + '</td>').join('') +
+        '<td><button class="btn-sm" onclick="deleteRow(' + i + ')">Șterge</button></td></tr>'
+      ).join('');
+    }
+
+    window.deleteRow = async function(index) {
+      if (!confirm('Sigur doriți să ștergeți acest rând?')) return;
+      await fetch(SCRIPT_URL + '?action=delete&key=' + encodeURIComponent(window.__adminKey) + '&row=' + index);
+      loadGuests();
+    };
+
+    document.getElementById('adminRefresh').addEventListener('click', loadGuests);
+
+    document.getElementById('adminExport').addEventListener('click', () => {
+      const table = document.querySelector('.admin-table');
+      if (!table) return;
+      let csv = '';
+      table.querySelectorAll('tr').forEach(row => {
+        const cells = [...row.querySelectorAll('th, td')].map(c => '"' + c.textContent.replace(/"/g, '""') + '"');
+        csv += cells.join(',') + '\n';
+      });
+      const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'invitati_vlad_iana.csv';
+      a.click();
+    });
+  </script>
+
+</body>
+</html>
