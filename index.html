@@ -111,11 +111,51 @@
     }
     .reveal.visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) translateX(0) scale(1);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-zoom {
+      opacity: 0;
+      transform: scale(0.85);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .reveal-zoom.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .reveal-fade {
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .reveal-fade.visible {
+      opacity: 1;
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
+      .reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-fade {
+        opacity: 1; transform: none; transition: none;
+      }
     }
 
     /* ── Hero ── */
@@ -819,7 +859,7 @@
 
   <!-- WELCOME -->
   <section class="welcome silk-bg silk-bg--1">
-    <div class="section-narrow reveal">
+    <div class="section-narrow reveal-fade">
       <div class="section-divider"></div>
       <p>
         Suntem tineri, îndrăgostiți de călătorii și de fiecare clipă trăită din plin. Pe acest drum am ales să vă avem aproape — pe voi, oamenii care contează cu adevărat pentru noi. Ne-am bucura din suflet să sărbătorim împreună începutul celei mai frumoase aventuri.
@@ -830,7 +870,7 @@
 
   <!-- NARRATIVE 1 -->
   <section class="narrative">
-    <div class="section-narrow reveal">
+    <div class="section-narrow reveal-left">
       <h2 class="section-title">Drumurile noastre<br>s-au întâlnit</h2>
       <p class="narrative__text">
         Două vieți care iubeau să descopere lumea au înțeles că cea mai frumoasă destinație erau una pentru cealaltă.
@@ -846,7 +886,7 @@
 
   <!-- NARRATIVE 2 -->
   <section class="narrative silk-bg silk-bg--2" style="background: rgba(253,252,249,0.85);">
-    <div class="section-narrow reveal">
+    <div class="section-narrow reveal-right">
       <h2 class="section-title">Nu e despre destinație,<br>e despre călătoria împreună</h2>
       <div class="narrative__card">
         <div class="narrative__photo">
@@ -887,12 +927,9 @@
     </div>
   </section>
 
-  <!-- PHOTO BREAK -->
-  <div class="reveal"><img src="img/photo-4.jpg" alt="Vlad & Iana" class="section-photo"></div>
-
   <!-- COUNTDOWN -->
   <section class="countdown-section">
-    <div class="section-narrow reveal">
+    <div class="section-narrow reveal-zoom">
       <h2 class="section-title">Până la nuntă mai sunt</h2>
       <div class="countdown" id="countdown">
         <div class="countdown__block">
@@ -916,11 +953,11 @@
   </section>
 
   <!-- PHOTO BREAK -->
-  <div class="reveal"><img src="img/photo-5.jpg" alt="Vlad & Iana" class="section-photo"></div>
+  <div class="reveal-zoom"><img src="img/photo-5.jpg" alt="Vlad & Iana" class="section-photo"></div>
 
   <!-- DRESS CODE -->
   <section class="dresscode silk-bg silk-bg--1">
-    <div class="section-narrow reveal">
+    <div class="section-narrow reveal-left">
       <h2 class="section-title">Dress-code<br><span class="calligraphy" style="font-size:0.8em; color: var(--sage);">Pastel Elegant</span></h2>
       <p>
         V-am pregătit o paletă blândă, în tonuri pastelate. Alegeți o nuanță care vă place și completați povestea zilei noastre.
@@ -955,7 +992,7 @@
   </section>
 
   <!-- PHOTO BREAK -->
-  <div class="reveal"><img src="img/photo-6.jpg" alt="Vlad & Iana" class="section-photo"></div>
+  <div class="reveal-fade"><img src="img/photo-6.jpg" alt="Vlad & Iana" class="section-photo"></div>
 
   <!-- INFO BLOCKS -->
   <section class="info-blocks silk-bg silk-bg--4">
@@ -1098,7 +1135,7 @@
 
   <script>
     /* ── Scroll reveal ── */
-    const reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-fade');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -1106,7 +1143,7 @@
           observer.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
     /* ── Countdown ── */
