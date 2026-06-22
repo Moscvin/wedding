@@ -31,6 +31,21 @@
       line-height: 1.7;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -20%;
+      left: -10%;
+      width: 120%;
+      height: 140%;
+      z-index: -1;
+      background: url('img/background_1.JPG') center / cover no-repeat;
+      opacity: 0.25;
+      transform: translateY(var(--silk-y, 0));
+      will-change: transform;
     }
 
     .calligraphy {
@@ -205,7 +220,7 @@
 
     /* ── Welcome ── */
     .welcome {
-      background: var(--white);
+      background: rgba(253, 252, 249, 0.85);
       text-align: center;
     }
 
@@ -258,7 +273,7 @@
 
     /* ── Gallery ── */
     .gallery {
-      background: var(--white);
+      background: rgba(253, 252, 249, 0.85);
     }
 
     .gallery__grid {
@@ -320,7 +335,7 @@
 
     /* ── Countdown ── */
     .countdown-section {
-      background: var(--white);
+      background: rgba(253, 252, 249, 0.85);
       text-align: center;
     }
 
@@ -396,7 +411,7 @@
 
     /* ── RSVP ── */
     .rsvp {
-      background: var(--white);
+      background: rgba(253, 252, 249, 0.85);
     }
 
     .rsvp__form {
@@ -1028,6 +1043,21 @@
   </div>
 
   <script>
+    /* ── Silk parallax ── */
+    (function() {
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const y = window.scrollY * 0.3;
+            document.body.style.setProperty('--silk-y', y + 'px');
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    })();
+
     /* ── Scroll reveal ── */
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
